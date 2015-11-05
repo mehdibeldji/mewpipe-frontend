@@ -1,0 +1,61 @@
+//states here
+$duration: 1s;
+$delay: .2s;
+$function: ease;
+$fill: both;
+$visibility: hidden;
+
+ul {
+  &.side-nav {
+
+    li {
+
+      &.logo:hover {
+        background-color: $transparent;
+      }
+
+      &:hover {
+        background-color: $hoverColor;
+      }
+
+      &.active {
+        background-color: $hoverColor;
+      }
+
+    }
+
+  }
+}
+
+.favorite:hover {
+  @include pulse($duration, $delay, $function, $fill, $visibility);
+}
+
+.materialboxed:hover {
+  cursor: pointer;
+}
+
+//states here
+
+.mewpipe-img-layout:hover {
+
+  cursor: pointer;
+
+  .mewpipe-fileinput-hover {
+    display: block;
+    transition: opacity .25s;
+  }
+
+}
+
+.mewpipe-edit-pictures:hover {
+  cursor: pointer;
+
+  .mewpipe-background-input-hover {
+    display: block;
+    transition: opacity .25s;
+  }
+
+}
+
+

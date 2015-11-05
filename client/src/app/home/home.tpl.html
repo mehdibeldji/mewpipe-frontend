@@ -1,0 +1,52 @@
+<div class="section fadeInLeft" id="index-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m9">
+          <h1 class="header center-on-small-only">{{ 'HOME.HELLO' | translate }}</h1>
+      </div>
+      <div class="col s12 m3">
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container fadeInLeft">
+  <div class="col s12 m12">
+    <blockquote class="flow-text">
+     <!-- {{ 'HOME.PARAGRAPH'|translate }}-->
+      <small>
+        {{ 'HOME.FIRST' | translate }}<br/>
+        {{ 'HOME.SECOND' | translate }}
+      </small>
+    </blockquote>
+  </div>
+  <div class="progress">
+    <div class="determinate" style="width: 100%"></div>
+  </div>
+  <div class="col s12 m12">
+    <h3>{{ 'HOME.HELLO' | translate }}</h3>
+    <div class="row">
+      <div ng-repeat="video in bestVideos">
+        <div class="col s3 m3 card-responsive">
+          <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light">
+              <a ng-href="#" ui-sref="root.display-video({videoId: video.id})">
+                <img ng-src="{{ video.thumbnail }}" class="responsive-img z-depth-2 materialboxed" alt="{{ video.title }}"
+                     ng-if="video.encoded"
+                  />
+                <img src="assets/images/loading-red.gif" class="responsive-img z-depth-2 materialboxed" ng-if="!video.encoded" alt="loading" />
+              </a>
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">{{ video.title }}</span>
+              <p><small>{{ video.nb_views }} {{ 'DISPLAY_VIDEO.VIEW'|translate }} - <span am-time-ago="video.createdAt"></span></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <blockquote ng-if="bestVideos.length == 0" class="blockquote-home">
+        Aucune vidéo n'a encore été postée sur MewPipe ...
+      </blockquote>
+    </div>
+  </div>
+</div>

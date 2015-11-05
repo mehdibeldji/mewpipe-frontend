@@ -1,0 +1,77 @@
+<div class="section fadeInLeft" id="index-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6">
+        <h1 class="header center-on-small-only">{{ 'PROFILE.TITLE' | translate }}</h1>
+      </div>
+      <div class="col s12 m6">
+        <div class="col s12 text-center">
+          <button type="button" class="waves-effect waves-light second-color btn edit-button" ng-click="deleteProfile()">
+            <i class="mdi-action-delete left"></i>{{ 'PROFILE.DELETE.TITLE'|translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container fadeInLeft">
+  <div class="col s12 m12">
+    <!--<h3 class="header">{{ ''|translate }}</h3>-->
+    <form name="editProfileForm" id="editProfileForm" novalidate="" ng-submit="editProfile()">
+
+      <div class="row">
+        <div class="col s3 offset-s4">
+          <label for="picture">{{ 'PROFILE.IMG_PROFILE'|translate }}</label>
+          <div class="input-field mewpipe-edit-pictures">
+            <div class="mewpipe-fileinput-button">
+                <div class="mewpipe-img-layout">
+                    <div class="mewpipe-fileinput-hover">
+                        <i class="mdi-image-camera-alt"></i>
+                        <div class="mewpipe-fileinput-hover-text">
+                            <small>{{ 'PROFILE.CHANGE_PROFILE_PICTURE'|translate }}</small>
+                        </div>
+                    </div>
+                    <img ng-src="{{img_profile}}"/>
+                    <input type="file"
+                           id="picture"
+                           name="pictureName"
+                           ng-file-load
+                           ng-model="picture"
+                           accept="image/*"
+                      >
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="mdi-social-person prefix"></i>
+          <input class="validate" id="firstname" type="text" length="255" ng-model="firstname">
+          <label for="firstname" class="active">{{ 'PROFILE.FORM.FIRSTNAME'|translate }}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="mdi-social-person-outline prefix"></i>
+          <input class="validate" id="lastname" type="text" length="255" ng-model="lastname">
+          <label for="lastname" class="active">{{ 'PROFILE.FORM.LASTNAME'|translate }}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="mdi-action-event prefix"></i>
+          <label for="birthdate" class="active">{{ 'PROFILE.FORM.BIRTHDATE'|translate }}</label>
+          <input type="text" id="birthdate" class="datepicker">
+        </div>
+      </div>
+
+      <button class="btn waves-effect waves-light primary-color" type="submit" name="action" ng-disabled="editProfileForm.$invalid">
+        {{ 'PROFILE.SUBMIT_EDIT'|translate }}
+      </button>
+    </form>
+  </div>
+</div>

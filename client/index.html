@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" ng-controller="MainCtrl">
+
+<head>
+  <meta charset="utf-8" />
+  <title>MewPipe Paris</title>
+  <meta name="description" content="MewPipe - Paris">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="keywords" content="MewPipe, Paris, BestProject" />
+
+  <!-- build:css assets/css/main.css -->
+  <!--<link rel="stylesheet" type="text/css" href="src/vendor/pure/pure.css" />
+  <link rel="stylesheet" type="text/css" href="src/vendor/pure/grids-responsive.css" />-->
+  <link rel="stylesheet" type="text/css" href="src/vendor/materialize/dist/css/materialize.css" media="" />
+  <link rel="stylesheet" type="text/css" href="src/vendor/components-font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="src/vendor/videogular-themes-default/videogular.css" />
+  <link rel="stylesheet" type="text/css" href="src/vendor/sweetalert/lib/sweet-alert.css" />
+  <link rel="stylesheet" type="text/css" href="src/vendor/angular-loading-bar/src/loading-bar.css" />
+  <link rel="stylesheet" type="text/css" href="tmp/main.css" />
+  <!-- endbuild -->
+  <link rel="icon" type="image/ico" href="favicon.ico" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+  <script src="https://cdn.lukej.me/socket.io-client/1.0.2/socket.io.js"></script>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <header ui-view="header"></header>
+    <main ui-view></main>
+    <!--<footer ui-view="footer" class="page-footer"></footer>-->
+    <div  style="clear: both;"></div>
+  </div>
+
+
+  <!-- build:js assets/js/vendor.js -->
+  <script type="text/javascript" src="src/vendor/sails.io.js/sails.io.js"></script>
+  <script type="text/javascript" src="src/vendor/angular/angular.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-sanitize/angular-sanitize.js"></script>
+  <script type="text/javascript" src="src/vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="src/vendor/materialize/dist/js/materialize.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-translate/angular-translate.js"></script>
+  <script type="text/javascript" src="src/vendor/videogular/videogular.js"></script>
+  <script type="text/javascript" src="src/vendor/videogular-poster/vg-poster.js"></script>
+  <script type="text/javascript" src="src/vendor/videogular-buffering/vg-buffering.js"></script>
+  <script type="text/javascript" src="src/vendor/videogular-controls/vg-controls.js"></script>
+  <script type="text/javascript" src="src/vendor/videogular-overlay-play/vg-overlay-play.js"></script>
+  <script type="text/javascript" src="src/vendor/sweetalert/lib/sweet-alert.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-loading-bar/src/loading-bar.js"></script>
+  <script type="text/javascript" src="src/vendor/ng-file-upload/angular-file-upload-shim.js"></script>
+  <script type="text/javascript" src="src/vendor/ng-file-upload/angular-file-upload.js"></script>
+  <script type="text/javascript" src="src/vendor/moment/moment.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-moment/angular-moment.js"></script>
+  <script type="text/javascript" src="src/vendor/moment/locale/fr.js"></script>
+  <script type="text/javascript" src="src/vendor/moment/locale/en-gb.js"></script>
+  <script type="text/javascript" src="src/vendor/ng-clip/src/ngClip.js"></script>
+  <script type="text/javascript" src="src/vendor/zeroclipboard/dist/ZeroClipboard.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-sails/dist/angular-sails.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js assets/js/main.js -->
+  <script type="text/javascript" src="src/common/constants/config.js"></script>
+  <script type="text/javascript" src="src/app/app.js"></script>
+  <!-- TRANSLATIONS -->
+  <script type="text/javascript" src="src/common/translations/translation.js"></script>
+  <script type="text/javascript" src="src/common/translations/translation.en.js"></script>
+  <script type="text/javascript" src="src/common/translations/translation.fr.js"></script>
+  <!-- END TRANSLATIONS -->
+
+  <!-- CONTROLLERS -->
+  <script type="text/javascript" src="src/app/getting-started/getting-started.js"></script>
+  <script type="text/javascript" src="src/app/home/home.js"></script>
+  <script type="text/javascript" src="src/app/connection/connection.js"></script>
+  <script type="text/javascript" src="src/app/add-video/add-video.js"></script>
+  <script type="text/javascript" src="src/app/display-video/display-video.js"></script>
+  <script type="text/javascript" src="src/app/my-videos/my-videos.js"></script>
+  <script type="text/javascript" src="src/app/edit-video/edit-video.js"></script>
+  <script type="text/javascript" src="src/app/profile/profile.js"></script>
+  <script type="text/javascript" src="src/app/shared-video/shared-video.js"></script>
+  <!-- CONTROLLERS -->
+
+  <!-- DIRECTIVES -->
+  <script type="text/javascript" src="src/common/directives/version.js"></script>
+  <script type="text/javascript" src="src/common/directives/ngFileLoad.js"></script>
+  <!-- END DIRECTIVES -->
+  <script type="text/javascript" src="src/common/interceptors/httpInterceptor.js"></script>
+  <script type="text/javascript" src="src/common/interceptors/authInterceptor.js"></script>
+
+  <!-- SERVICES -->
+  <script type="text/javascript" src="src/common/services/dataService.js"></script>
+  <script type="text/javascript" src="src/common/services/localService.js"></script>
+  <script type="text/javascript" src="src/common/services/authService.js"></script>
+  <script type="text/javascript" src="src/common/services/videoService.js"></script>
+  <script type="text/javascript" src="src/common/services/userService.js"></script>
+  <script type="text/javascript" src="src/common/services/fileReaderService.js"></script>
+  <script type="text/javascript" src="src/common/services/fileService.js"></script>
+  <!-- END SERVICES -->
+
+  <!-- FILTERS -->
+  <script type="text/javascript" src="src/common/filters/uppercase.js"></script>
+  <!-- END FILTERS -->
+
+  <!-- HEADER AND FOOTER -->
+  <script type="text/javascript" src="src/common/header/header.js"></script>
+  <script type="text/javascript" src="src/common/footer/footer.js"></script>
+  <!-- HEADER AND FOOTER -->
+
+  <script type="text/javascript" src="tmp/templates.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

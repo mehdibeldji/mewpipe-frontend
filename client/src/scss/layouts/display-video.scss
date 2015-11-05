@@ -1,0 +1,92 @@
+.collapsible {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.favorite {
+  font-size: 45px;
+}
+
+.share-field-padding {
+  padding: 50px;
+}
+
+vg-poster {
+  img {
+    &.stop {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.nb-likes {
+  margin-top: 30px;
+}
+
+.edit-button, .delete-button {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  margin-right: 1%;
+}
+
+
+@media (min-width: 601px ) and (max-width: 962px) {
+  .edit-button, .delete-button {
+    margin-top: 75px;
+  }
+}
+
+.edit-delete {
+  text-align: center;
+}
+
+
+.videogular-container {
+  //width: 100%;
+  height: 320px;
+  margin: auto;
+  overflow: hidden;
+  z-index: 0;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+
+  .videogular-container {
+    //width: 1170px;
+    height: 658.125px;
+
+  }
+
+  .videogular-container.audio {
+    //width: 1170px;
+    height: 50px;
+  }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .videogular-container {
+    //width: 940px;
+    height: 528.75px;
+  }
+
+  .videogular-container.audio {
+    //width: 940px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .videogular-container {
+   //width: 728px;
+    height: 409.5px;
+  }
+
+  .videogular-container.audio {
+    //width: 728px;
+    height: 50px;
+  }
+}

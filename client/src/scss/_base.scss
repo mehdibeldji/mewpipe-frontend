@@ -1,0 +1,246 @@
+//@import 'normalize';
+
+/* Fonts
+   ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: "Roboto", sans-serif;
+
+}
+/* Defaults
+   ========================================================================== */
+
+html {
+  @include font-size($base-root-size);
+  line-height: 1.5;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  background-color: $main-color;
+}
+
+::-moz-selection {
+
+  @include selection();
+}
+::selection {
+
+  @include selection();
+}
+::-webkit-input-placeholder {
+
+  @include placeholder();
+}
+::-moz-placeholder {
+
+  @include placeholder();
+}
+:-ms-input-placeholder {
+  @include placeholder();
+
+}
+img.pure-img {
+  vertical-align: middle;
+  max-width: 60%;
+  display: inline;
+
+}
+code {
+  color: $red;
+
+}
+h3 {
+  font-weight: normal;
+  @include font-size(22);
+
+}
+.pure-menu.pure-menu-horizontal {
+  background: $silver;
+
+}
+a {
+  //color: $blue;
+  text-decoration: none;
+  line-height: inherit;
+}
+a:focus,
+a:hover {
+ // color: darken($blue, 9);
+
+}
+a.pure-button:focus,
+a.pure-button:hover {
+  color: #fff;
+
+}
+pre {
+  code {
+    color: $black;
+    background-color: $silver;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $gray;
+    display: block;
+    padding: 0.5em;
+  }
+
+}
+h4 {
+  @include font-size(21);
+}
+
+// Added
+
+header, main, footer {
+  padding-left: 240px;
+}
+/*
+main {
+  padding-bottom: 100px;
+}*/
+
+.container {
+  width: 85%;
+}
+
+/*footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}*/
+
+@media screen and (max-width:992px) {
+
+  header, main, footer {
+    padding-left: 0;
+  }
+
+}
+
+@media (max-width: 1197px) {
+
+  .card-responsive {
+    width: 50%!important;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .card-responsive {
+    width: 100% !important;
+  }
+
+  .collection-responsive {
+    font-size: 12px;
+  }
+
+  .like-responsive {
+    display: none;
+  }
+
+  .responsive-like {
+    display: inline-block!important;
+  }
+
+}
+
+div.collapsible-body {
+  ul {
+    li.active {
+      a {
+        .mdi-icon-settings {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+li {
+  a {
+    .mdi-icon-settings {
+      color: $red-mewpipe;
+    }
+  }
+}
+
+.responsive-like {
+  display: none;
+}
+
+#wrapper {
+  position: relative;
+  min-height: 99%;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: inherit;
+}
+
+ul.side-nav .collapsible-body li.active, ul.side-nav.fixed .collapsible-body li.active {
+  background-color: $red-mewpipe;
+}
+
+.input-field .prefix.active {
+  color: $blue-light-mewpipe;
+}
+
+.input-field input[type=text].valid, .input-field input[type=password].valid, .input-field input[type=email].valid, .input-field input[type=url].valid, .input-field input[type=date].valid, .input-field input[type=tel].valid, .input-field input[type=number].valid, .input-field input[type=search].valid, .input-field textarea.materialize-textarea.valid {
+
+  border-bottom: 1px solid $red-mewpipe;
+  -webkit-box-shadow: 0 1px 0 0 $red-mewpipe;
+  -moz-box-shadow: 0 1px 0 0 $red-mewpipe;
+  box-shadow: 0 1px 0 0 $red-mewpipe;
+
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=date]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus.materialize-textarea {
+  border-bottom: 1px solid $blue-light-mewpipe;
+  -webkit-box-shadow: 0 1px 0 0 $blue-light-mewpipe;
+  -moz-box-shadow: 0 1px 0 0 $blue-light-mewpipe;
+  box-shadow: 0 1px 0 0 $blue-light-mewpipe;
+}
+
+.input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=url]:focus + label, .input-field input[type=date]:focus + label, .input-field input[type=tel]:focus + label, .input-field input[type=number]:focus + label, .input-field input[type=search]:focus + label, .input-field textarea:focus.materialize-textarea + label {
+  color: $blue-light-mewpipe;
+}
+
+[type="radio"]:checked + label:after  {
+  background-color: $blue-light-mewpipe;
+  border-color: $red-mewpipe;
+}
+
+.second-color {
+  background-color: $blue-light-mewpipe;
+}
+
+.secondary {
+  color: $blue-light-mewpipe!important;
+}
+
+.primary-color {
+  background-color: $red-mewpipe;
+}
+
+blockquote {
+  border-color: $blue-light-mewpipe;
+}

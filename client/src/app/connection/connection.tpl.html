@@ -1,0 +1,41 @@
+<div class="section fadeInLeft" id="index-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m9">
+        <h1 class="header center-on-small-only">{{ 'CONNECTION.TITLE' | translate }}</h1>
+      </div>
+      <div class="col s12 m3">
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container fadeInLeft">
+  <div class="col s12 m12">
+      <h3 class="header">{{ 'CONNECTION.SELECT_EXISTING_ACCOUNT'|translate }}</h3>
+      <a target="_self" ng-href="{{ url }}users/google" class="waves-effect waves-light btn-large red lighten-1">
+        <i class="fa fa-google-plus left"></i> Google
+      </a>
+      <a target="_self" ng-href="{{ url }}users/facebook" class="waves-effect waves-light btn-large indigo darken-3">
+        <i class="fa fa-facebook-official left"></i>Facebook
+      </a>
+      <a target="_self" ng-href="{{ url }}users/twitter" class="waves-effect waves-light btn-large blue lighten-2">
+        <i class="fa fa-twitter left"></i>Twitter
+      </a>
+      <a target="_self" ng-href="{{ url }}users/github" class="waves-effect waves-light btn-large grey lighten-1">
+        <i class="fa fa-github left"></i>GitHub
+      </a>
+  </div>
+  <div class="col s12 m12">
+    <h3 class="header">{{ 'CONNECTION.OR_ENTER_OPEN_ID'|translate }}</h3>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="openId" type="text" class="validate" ng-model="openId">
+        <label for="openId">URL OpenID</label>
+      </div>
+    </div>
+    <a ng-href="{{ url }}users/openid?openid_identifier={{openId}}" class="btn waves-effect waves-light primary-color" type="submit" name="action">{{ 'CONNECTION.SUBMIT'|translate }}
+      <i class="mdi-content-send right"></i>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="section fadeInLeft" id="index-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m9">
+        <h1 class="header center-on-small-only">{{ 'MY_VIDEOS.TITLE' | translate }}</h1>
+      </div>
+      <div class="col s12 m3">
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container fadeInLeft">
+  <div class="col s12 m12">
+    <div class="row">
+      <div ng-repeat="video in videos">
+        <div class="col s3 m3 card-responsive">
+          <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light">
+              <a ng-href="#" ui-sref="root.display-video({videoId: video.id})">
+                <img ng-src="{{ video.thumbnail }}" class="responsive-img z-depth-2 materialboxed" alt="{{ video.title }}"
+                     ng-if="video.encoded"
+                />
+                <img src="assets/images/loading-red.gif" class="responsive-img z-depth-2 materialboxed" ng-if="!video.encoded" alt="loading" />
+              </a>
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">{{ video.title }}</span>
+              <p><small>{{ video.nb_views }} {{ 'DISPLAY_VIDEO.VIEW'|translate }} - <span am-time-ago="video.createdAt"></span></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="novideos" ng-if="videos.length == 0">
+        <h3 class="text-center" style="margin-bottom: 181px;">
+          {{ 'MY_VIDEOS.NO_VIDEO' | translate }}
+        </h3>
+        <div class="text-center" style="margin-bottom: 181px;">
+          <a ng-href="#" ui-sref="root.add-video" class="waves-effect waves-light primary-color btn-large">
+            <i class="mdi-file-cloud-upload mdi-file-cloud left"></i>
+            {{ 'ADD_VIDEO.TITLE'|translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

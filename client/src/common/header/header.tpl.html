@@ -1,0 +1,100 @@
+<div class="container">
+  <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full">
+    <i class="mdi-navigation-menu"></i>
+  </a>
+</div>
+<ul id="nav-mobile" class="side-nav fixed">
+  <li class="logo">
+    <a class="logo-container" ng-href="#" ui-sref="root.home" class="brand-logo">
+      <img class="logo-container" src="assets/images/mewpipe-150x150.png" />
+    </a>
+  </li>
+  <li class="bold" ui-sref-active="active">
+    <a ng-href="#" ui-sref="root.home" class="waves-effect waves-teal">
+      <i class="mdi-action-home mdi-icon-settings"></i> Accueil
+    </a>
+  </li>
+  <!--<li class="bold" ui-sref-active="active">
+    <a ng-href="#" class="waves-effect waves-teal">
+      <i class="mdi-av-video-collection mdi-icon-settings"></i> Vidéos populaires
+    </a>
+  </li>-->
+  <li class="bold" ui-sref-active="active" ng-hide="isLogged">
+    <a ng-href="#" ui-sref="root.connection" class="waves-effect waves-teal">
+      <i class="mdi-action-lock mdi-icon-settings"></i> {{ 'CONNECTION.TITLE'|translate }}
+    </a>
+  </li>
+  <li class="no-padding" ng-show="isLogged">
+    <ul class="collapsible collapsible-accordion">
+      <li class="bold">
+        <a class="collapsible-header waves-effect waves-teal">
+          <img ng-src="{{profileImgUrl}}" alt="" class="circle img-profile"/> {{ username }}
+        </a>
+
+        <div class="collapsible-body" style="">
+          <ul>
+            <li ui-sref-active="active">
+              <a ng-href="#" ui-sref="root.profile({userId: userId})">
+                <i class="mdi-social-person mdi-icon-settings"></i> {{ 'CONNECTION.PROFILE'|translate }}
+              </a>
+            </li>
+            <li ui-sref-active="active">
+              <a ng-href="#" ui-sref="root.my-videos">
+                <i class="mdi-av-videocam mdi-icon-settings"></i> {{ 'MY_VIDEOS.TITLE'|translate }}
+              </a>
+            </li>
+            <li ui-sref-active="active">
+              <a ng-href="#" ui-sref="root.add-video">
+                <i class="mdi-content-add-circle mdi-icon-settings"></i> {{ 'ADD_VIDEO.TITLE'|translate }}
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-click="logout()">
+              <a ng-href="#" >
+                <i class="mdi-content-backspace mdi-icon-settings"></i> {{ 'CONNECTION.LOGOUT'|translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li class="no-padding" ng-controller="TranslationCtrl as trln">
+    <ul class="collapsible collapsible-accordion">
+      <li class="bold">
+        <a class="collapsible-header waves-effect waves-teal">
+          <img ng-src="assets/images/mp-flag-16-{{actualLanguageCode}}.png" alt="{{actualLanguage}}" /> {{ 'HEADER.LANGUAGE'|translate }}
+        </a>
+
+        <div class="collapsible-body" style="">
+          <ul>
+            <li>
+              <a ng-href="#" ng-click="changeLanguage('fr')">
+                <img src="assets/images/mp-flag-16-fr.png" alt="Français" /> Français
+              </a>
+            </li>
+            <li>
+              <a ng-href="#" ng-click="changeLanguage('en')">
+                <img src="assets/images/mp-flag-16-en.png" alt="English" /> English
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </li>
+    </ul>
+  </li>
+
+</ul>
+
+<!-- NAVBAR SEARCH -->
+<!--<nav class="nav-search">
+  <div class="nav-wrapper">
+    <form id="nav-form">
+      <div class="input-field">
+        <input id="search" type="text" placeholder="{{ 'HEADER.SEARCH_VIDEO'|translate }}" required>
+        <label for="search"><i class="mdi-action-search"></i></label>
+      </div>
+    </form>
+  </div>
+</nav>-->
+
